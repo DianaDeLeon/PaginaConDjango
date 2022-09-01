@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #D6EAF8;">
+    
+    <a href="{% url 'home:homeapp' %}">Home</a>
+    <a href="{% url 'home:estudiantesapp' %}">Estudiantes</a>
+    <a href="{% url 'home:administradoresapp' %}">Administradores</a>
+    <a href="{% url 'home:acercadeapp' %}">Acerca de</a>
+
+    <center><h1 style="font-family: 'Courier New', Courier, monospace; color: blue;">Listado de Administradores</h1></center>
+    <table border="1" align="center" style="width: 30%;">
+        <tr>
+         
+            <td><b>Id</b></td>
+            <td><b>Nombre</b></td>
+            <td><b>Apellido</b></td>
+            <td><b>Telefono</b></td>
+       
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Estefani</td>
+            <td>de León</td>
+            <td>34567812</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Pedro</td>
+            <td>Maldonado</td>
+            <td>85324512</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Karina</td>
+            <td>Reyna</td>
+            <td>93175433</td>
+        </tr>
+    </table>
+</body>
+</html>
