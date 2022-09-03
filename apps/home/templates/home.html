@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colegio Amigos</title>
-</head>
-<body style="background-color: #D6EAF8;">
-    <nav>
-        <a href="{% url 'home:homeapp' %}">Home</a>
-        <a href="{% url 'home:estudiantesapp' %}">Estudiantes</a>
-        <a href="{% url 'home:administradoresapp' %}">Administradores</a>
-        <a href="{% url 'home:acercadeapp' %}">Acerca de</a>
-    </nav>
-    
-
-    <center>
-        <h1 style="font-family: 'Courier New', Courier, monospace; color: red;">COLEGIO AMIGOS</h1>
-        <h1 style="font-family: 'Courier New', Courier, monospace; color: rgb(46, 46, 146);">¡Bievenidos!</h1>
-    </center>
-    
-</body>
-</html>
+{% extends 'base.html'%}
+{% load static %}
+{% block contenido %}
+<header class="masthead bg-primary text-white text-center bg-opacity-75 ">
+<div class="container d-flex align-items-center flex-column">
+    <!-- Imagen de los niños-->
+    <img class="masthead-avatar mb-5" src="{% static 'assets/img/colegio.png' %}" alt="..." />
+    <!-- Encabezado-->
+    <h1 class="masthead-heading text-uppercase mb-0">¡Bievenidos!</h1>
+    <!-- Icon Divider-->
+    <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <!-- Slogan-->
+    <p class="masthead-subheading font-weight-light mb-0">Aprende - Divertete - Juega</p>
+</div>
+</header>
+{% endblock %}

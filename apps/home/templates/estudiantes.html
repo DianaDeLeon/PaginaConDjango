@@ -1,50 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="background-color: #D6EAF8;">
+{% extends 'base.html'%}
+{% load static %}
+{% block contenido%}
     
-    <a href="{% url 'home:homeapp' %}">Home</a>
-    <a href="{% url 'home:estudiantesapp' %}">Estudiantes</a>
-    <a href="{% url 'home:administradoresapp' %}">Administradores</a>
-    <a href="{% url 'home:acercadeapp' %}">Acerca de</a>
+<header class="masthead bg-light text-white text-center">
+    <div class="container">
+        <!-- Pagina de Estudiantes-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Listado de Estudiantes</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Tabal de Estudiantes-->
+        <div class="row justify-content-center">
+            <table class="table table-striped">
+                <tr>
+                 
+                    <td><b>Carnet</b></td>
+                    <td><b>Nombre</b></td>
+                    <td><b>Apellido</b></td>
+                    <td><b>Edad</b></td>
+                    <td><b>Grado</b></td>
+               
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Diana</td>
+                    <td>de León</td>
+                    <td>8</td>
+                    <td>Segundo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Juan</td>
+                    <td>Maldonado</td>
+                    <td>8</td>
+                    <td>Segundo</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Luis</td>
+                    <td>Reyna</td>
+                    <td>8</td>
+                    <td>Segundo</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</header>
 
-    <center><h1 style="font-family: 'Courier New', Courier, monospace; color: blue;">Listado de Estudiantes</h1></center>
-    <table border="1" align="center" style="width: 30%;">
-        <tr>
-         
-            <td><b>Carnet</b></td>
-            <td><b>Nombre</b></td>
-            <td><b>Apellido</b></td>
-            <td><b>Edad</b></td>
-            <td><b>Grado</b></td>
-       
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Diana</td>
-            <td>de León</td>
-            <td>8</td>
-            <td>Segundo</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Juan</td>
-            <td>Maldonado</td>
-            <td>8</td>
-            <td>Segundo</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Luis</td>
-            <td>Reyna</td>
-            <td>8</td>
-            <td>Segundo</td>
-        </tr>
-    </table>
-</body>
-</html>
+{% endblock %}
