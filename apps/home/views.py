@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, CreateView
+from .forms import EstudiantePForm, EstudianteAForm, ArticulosForm, PublicacionesForm, ComentariosForm
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -12,5 +14,42 @@ class EstudiantesView(TemplateView):
 class AdministradoresView(TemplateView):
     template_name='administradores.html'
 
+class ArticuloView(TemplateView):
+    template_name='articulos.html'
+
+class PublicacionView(TemplateView):
+    template_name='publicacion.html'
+
+class ComentarioView(TemplateView):
+    template_name='comentario.html'
+
+
 class AcercadeView(TemplateView):
     template_name='acercade.html'
+
+
+
+class CrearEstudiantePView(CreateView):
+    template_name="crearEstudiante.html"
+    form_class=EstudiantePForm
+    success_url= reverse_lazy('home:homeapp')
+
+class CrearEstudianteAView(CreateView):
+    template_name="crearEstudianteAu.html"
+    form_class=EstudianteAForm
+    success_url= reverse_lazy('home:homeapp')
+
+class CrearArticuloView(CreateView):
+    template_name="crearArticulo.html"
+    form_class=ArticulosForm
+    success_url= reverse_lazy('home:homeapp')
+
+class CrearPublicacionesView(CreateView):
+    template_name="crearPublicacion.html"
+    form_class=PublicacionesForm
+    success_url= reverse_lazy('home:homeapp')
+
+class CrearComentariosView(CreateView):
+    template_name="crearComentarios.html"
+    form_class=ComentariosForm
+    success_url= reverse_lazy('home:homeapp')

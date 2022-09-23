@@ -40,7 +40,7 @@ class Publicaciones(models.Model):
         return '%s %s' % (self.articulo,self.publica)
 
 class Comentarios(models.Model):
-    articulo = models.ManyToManyField(Articulos)
+    articulo = models.ForeignKey(Articulos,on_delete=models.CASCADE)
     comentario = models.CharField(max_length=500)
     comenta = models.ForeignKey(EstudiantePublica,on_delete=models.CASCADE) 
     creacion = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contenido%}
+    
+<header class="masthead bg-light text-white text-center">
+    <div class="container">
+        <!-- Pagina de Estudiantes-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Listado de Comentarios</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+    <!-- Tabal de Estudiantes-->
+    <div class="row justify-content-center">
+        <table class="table table-striped">
+            <tr>
+             
+                <td><b>Articulo</b></td>
+                <td><b>Comentario</b></td>
+                <td><b>Quien comenta</b></td>
+                <td><b>Fecha de Creación</b></td>
+           
+            </tr>
+            
+        </table>
+    </div>
+
+    <a href="{% url 'home:crearcomentarios' %}">
+        <button class="btn-lg text-uppercase font-weight-bold bg-primary text-white rounded" type="button" > Agregar </button>
+      </a>
+
+    </div>
+</header>
+
+{% endblock %}

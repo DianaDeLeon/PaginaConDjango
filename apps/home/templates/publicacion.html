@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contenido%}
+    
+<header class="masthead bg-light text-white text-center">
+    <div class="container">
+        <!-- Pagina de Estudiantes-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Listado de Publicaciones</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    <!-- Tabal de Publicaciones-->
+    <div class="row justify-content-center">
+        <table class="table table-striped">
+            <tr>
+             
+                <td><b>Artículo</b></td>
+                <td><b>Quien publica</b></td>
+                <td><b>Fecha de Creación</b></td>
+           
+            </tr>
+            <tr>
+                <td>La contaminación</td>
+                <td>Pedro de León</td>
+                <td>08/05/2022</td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="{% url 'home:crearpublicacion' %}">
+        <button class="btn-lg text-uppercase font-weight-bold bg-primary text-white rounded" type="button" > Agregar </button>
+      </a>
+
+    </div>
+</header>
+
+{% endblock %}

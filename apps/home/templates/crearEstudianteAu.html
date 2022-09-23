@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contenido%}
+    
+<header class="masthead bg-light text-white text-center">
+    <div class="container">
+        <!-- Pagina de Estudiantes-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Crear Estudiante (Autoriza)</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        
+        <form style="color:#0f0202; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 0.55cm;" method="POST">
+                {% csrf_token %}
+                Carnet {{form.carnet}}
+                Nombre {{form.nombre}}
+                Apellido {{form.apellido}}
+                <br><br><br>
+                <button class="text-uppercase font-weight-bold bg-primary text-white rounded" style='width:130px; height:45px' type="submit" >Guardar</button>
+        </form>
+        
+    </div>
+</header>
+
+{% endblock %}

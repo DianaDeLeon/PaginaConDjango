@@ -5,7 +5,7 @@
 <header class="masthead bg-light text-white text-center">
     <div class="container">
         <!-- Pagina de administradores-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Listado de Administradores</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Estudiantes que autorizan</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -16,33 +16,37 @@
         <div class="row justify-content-center">
             <table class="table table-striped">
                 <tr>
-         
-                    <td><b>Id</b></td>
+                 
+                    <td><b>Carnet</b></td>
                     <td><b>Nombre</b></td>
                     <td><b>Apellido</b></td>
-                    <td><b>Telefono</b></td>
+                    <td><b>Fecha de Creación</b></td>
                
                 </tr>
                 <tr>
                     <td>1</td>
-                    <td>Estefani</td>
-                    <td>de León</td>
-                    <td>34567812</td>
+                    <td>Pedro</td>
+                    <td>López</td>
+                    <td>08/05/2022</td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Pedro</td>
-                    <td>Maldonado</td>
-                    <td>85324512</td>
+                    <td>Luis</td>
+                    <td>Barrios</td>
+                    <td>12/06/2022</td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Karina</td>
+                    <td>Juan</td>
                     <td>Reyna</td>
-                    <td>93175433</td>
+                    <td>09/09/2022</td>
                 </tr>
             </table>
         </div>
+
+        <a href="{% url 'home:crearestudiantea' %}">
+            <button class="btn-lg text-uppercase font-weight-bold bg-primary text-white rounded" type="button" > Agregar </button>
+          </a>
     </div>
 </header>
     {% endblock %}
