@@ -5,7 +5,7 @@
 <header class="masthead bg-light text-white text-center">
     <div class="container">
         <!-- Pagina de Estudiantes-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Crear Articulo</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Crear Usuario</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
             <div class="divider-custom-line"></div>
@@ -13,13 +13,11 @@
             <div class="divider-custom-line"></div>
         </div>
         
-        <form style="color:#0f0202; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 0.40cm;" method="POST">
+        <form action="" style="color:#0f0202; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size: 0.40cm;" method="POST">
                 {% csrf_token %}
-                Titulo {{form.titulo}}
-                Descripcion {{form.descripcion}}
-                Autorizado por {{form.autoriza}}
+                {{form.as_p}}     
                 <br><br><br>
-                <button class="text-uppercase font-weight-bold bg-primary rounded" style='width:1px; height:45px' type="submit" >Guardar</button>
+                <button class="text-uppercase font-weight-bold bg-primary rounded" style='width:150px; height:45px' type="submit" >Guardar</button>
         </form>
         
     </div>

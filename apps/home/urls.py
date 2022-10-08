@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from .views import HomeView,EstudiantesView,AdministradoresView,AcercadeView,ArticuloView,PublicacionView,ComentarioView
+from .views import HomeView,EstudiantesView,AdministradoresView,AcercadeView,ArticuloView,PublicacionView,ComentarioView, RegistroView, LoginView
 from .views import CrearEstudiantePView,CrearEstudianteAView,CrearArticuloView,CrearPublicacionesView,CrearComentariosView
 from apps.home import views
 
 app_name='home'
 urlpatterns = [
-   path('', HomeView.as_view(), name='homeapp'),
+   path('', LoginView.as_view(), name ='login'),
+   path('inicio/',HomeView.as_view(), name='homeapp'),
    path('estudiantes/', EstudiantesView.as_view(), name='estudiantesapp'),
    path('administradores/',AdministradoresView.as_view(), name='administradoresapp'),
    path('articulos/',ArticuloView.as_view(), name='articulosapp'),
@@ -34,4 +35,7 @@ urlpatterns = [
    path('crearArticulo/',CrearArticuloView.as_view(), name='creararticulo'),
    path('crearPublicacion/',CrearPublicacionesView.as_view(), name='crearpublicacion'),
    path('crearComentario/',CrearComentariosView.as_view(), name='crearcomentarios'),
+
+   path('registrar/',RegistroView.as_view(), name='registro'),
+
 ]
