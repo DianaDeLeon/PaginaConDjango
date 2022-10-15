@@ -17,14 +17,22 @@
     <div class="row justify-content-center">
         <table class="table table-striped">
             <tr>
-             
+                <td><b>Id</b></td>
                 <td><b>Articulo</b></td>
                 <td><b>Comentario</b></td>
                 <td><b>Quien comenta</b></td>
-                <td><b>Fecha de Creación</b></td>
+   
            
             </tr>
-            
+            {% for i in object_list %}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.articulo}}</td>
+                <td>{{i.comentario}}</td>
+                <td>{{i.comenta}}</td>
+             
+            </tr>
+        {% endfor %}
         </table>
     </div>
 

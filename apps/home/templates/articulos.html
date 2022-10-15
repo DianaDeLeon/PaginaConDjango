@@ -17,19 +17,22 @@
     <div class="row justify-content-center">
         <table class="table table-striped">
             <tr>
-             
+                <td><b>#</b></td>
                 <td><b>Titulo</b></td>
                 <td><b>Descripcion</b></td>
                 <td><b>Quien autoriza</b></td>
-                <td><b>Fecha de Creación</b></td>
+                
            
             </tr>
-            <tr>
-                <td>La contaminación</td>
-                <td>Se denomina contaminación ambiental a la presencia de componentes nocivos</td>
-                <td>Juan Barrios</td>
-                <td>03/06/2022</td>
-            </tr>
+            {% for i in object_list %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.titulo}}</td>
+                    <td>{{i.descripcion}}</td>
+                    <td>{{i.autoriza}}</td>
+                 
+                </tr>
+            {% endfor %}
             
         </table>
     </div>

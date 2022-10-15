@@ -16,17 +16,23 @@
     <div class="row justify-content-center">
         <table class="table table-striped">
             <tr>
-             
+                <td><b>#</b></td>
                 <td><b>Artículo</b></td>
                 <td><b>Quien publica</b></td>
                 <td><b>Fecha de Creación</b></td>
            
             </tr>
-            <tr>
-                <td>La contaminación</td>
-                <td>Pedro de León</td>
-                <td>08/05/2022</td>
-            </tr>
+   
+                {% for i in object_list %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.articulo}}</td>
+                    <td>{{i.publica}}</td>
+                    <td>{{i.creacion}}</td>
+                    
+                </tr>
+                {% endfor %}
+   
         </table>
     </div>
 
