@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path,include
 from .views import HomeView,EstudiantesView,AdministradoresView,AcercadeView,ArticuloView,PublicacionView,ComentarioView, RegistroView, LoginView
 from .views import CrearEstudiantePView,CrearEstudianteAView,CrearArticuloView,CrearPublicacionesView,CrearComentariosView
+from .views import EditarEstudiantePView, EditarArticuloView,EditarComentariosView,EditarEstudianteAView,EditarPublicacionesView
+from .views import  DetalleEstudiantesView, DetalleEstudianteAView, DetalleArticuloView, DetalleComentariosView, DetallePublicacionesView
+
+
 from apps.home import views
 
 app_name='home'
@@ -38,4 +42,15 @@ urlpatterns = [
 
    path('registrar/',RegistroView.as_view(), name='registro'),
 
+   path('editarEP/<int:pk>/',EditarEstudiantePView.as_view(), name='editarestudiantep'),
+   path('editarEA/<int:pk>/',EditarEstudianteAView.as_view(), name='editarestudiantea'),
+   path('editarArticulo/<int:pk>/',EditarArticuloView.as_view(), name='editararticulo'),
+   path('editarPublicacion/<int:pk>/',EditarPublicacionesView.as_view(), name='editarpublicacion'),
+   path('editarComentario/<int:pk>/',EditarComentariosView.as_view(), name='editarcomentarios'),
+
+   path('detalleEP/<int:pk>/', DetalleEstudiantesView.as_view(), name='detalleestudiante'),
+   path('detalleEA/<int:pk>/', DetalleEstudianteAView.as_view(), name='detalleestudianteA'),
+   path('detalleArticulo/<int:pk>/', DetalleArticuloView.as_view(), name='detallearticulo'),
+   path('detallePublicacion/<int:pk>/', DetallePublicacionesView.as_view(), name='detallepublicacion'),
+   path('detalleComentario/<int:pk>/', DetalleComentariosView.as_view(), name='detallecomentario'),
 ]

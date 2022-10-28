@@ -13,6 +13,15 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Tabla de administradores-->
+        <br>
+        <form class="d-flex" role="search" metod="GET">
+            <div class="col-xs-4">
+                <input class="form-control " type="search" name="nombre" value="{{request.GET.nombre}}">
+            </div>
+            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        </form>
+
+        <br>
         <div class="row justify-content-center">
             <table class="table table-striped">
                 <tr>
@@ -21,6 +30,8 @@
                     <td><b>Nombre</b></td>
                     <td><b>Apellido</b></td>
                     <td><b>Fecha de Creación</b></td>
+                    <td><b>Editar</b></td>
+                    <td><b></b></td>
                
                 </tr>
                 {% for i in object_list %}
@@ -30,6 +41,8 @@
                     <td>{{i.nombre}}</td>
                     <td>{{i.apellido}}</td>
                     <td>{{i.creacion}}</td>
+                    <td><a href="{% url 'home:editarestudiantea' i.id %}">Editar</a></td>
+                    <td><a href="{% url 'home:detalleestudianteA' i.id %}">Ver</a></td>
                 </tr>
                 {% endfor %}
             </table>

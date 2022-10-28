@@ -1,10 +1,11 @@
 {% extends 'base.html'%}
 {% load static %}
 {% block contenido%}
-    
+
 <header class="masthead bg-light text-white text-center">
     <div class="container">
         <!-- Pagina de Estudiantes-->
+
         <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Estudiantes que Publican</h2>
         <!-- Icon Divider-->
         <div class="divider-custom">
@@ -13,6 +14,15 @@
             <div class="divider-custom-line"></div>
         </div>
         <!-- Tabal de Estudiantes-->
+        <br>
+        <form class="d-flex" role="search" metod="GET">
+            <div class="col-xs-4">
+                <input class="form-control " type="search" name="nombre" value="{{request.GET.nombre}}">
+            </div>
+            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+        </form>
+
+        <br>
         <div class="row justify-content-center">
             <table class="table table-striped">
                 <tr>
@@ -21,24 +31,32 @@
                     <td><b>Nombre</b></td>
                     <td><b>Apellido</b></td>
                     <td><b>Fecha de Creación</b></td>
-               
+                    <td><b>Editar</b></td>
+                    <td><b></b></td>
                 </tr>
                 {% for i in object_list %}
-                <tr>
-                    <td>{{i.id}}</td>
-                    <td>{{i.carnet}}</td>
-                    <td>{{i.nombre}}</td>
-                    <td>{{i.apellido}}</td>
-                    <td>{{i.creacion}}</td>
-                </tr>
+                
+                    <tr>
+                       
+                        <td>{{i.id}}</td>
+                        <td>{{i.carnet}}</td>
+                        <td>{{i.nombre}}</td>
+                        <td>{{i.apellido}}</td>
+                        <td>{{i.creacion}}</td>
+                        <td><a href="{% url 'home:editarestudiantep' i.id %}">Editar</a></td>
+                        <td><a href="{% url 'home:detalleestudiante' i.id %}">Ver</a></td>
+                
+                    </tr>
+                       </a>         
                 {% endfor %}
             </table>
         </div>
 
         <a href="{% url 'home:crearestudiantep' %}">
-            <button class="btn-lg text-uppercase font-weight-bold bg-primary text-white rounded" type="button" > Agregar </button>
-          </a>
-        
+            <button class="btn-lg text-uppercase font-weight-bold bg-primary text-white rounded" type="button"> Agregar
+            </button>
+        </a>
+
     </div>
 </header>
 

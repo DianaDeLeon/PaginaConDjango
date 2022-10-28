@@ -13,6 +13,15 @@
             <div class="divider-custom-line"></div>
         </div>
     <!-- Tabal de Publicaciones-->
+    <br>
+    <form class="d-flex" role="search" metod="GET">
+        <div class="col-xs-4">
+            <input class="form-control " type="search" name="titulo" value="{{request.GET.titulo}}">
+        </div>
+        <button class="btn btn-outline-primary" type="submit">Buscar</button>
+    </form>
+
+    <br>
     <div class="row justify-content-center">
         <table class="table table-striped">
             <tr>
@@ -20,7 +29,8 @@
                 <td><b>Artículo</b></td>
                 <td><b>Quien publica</b></td>
                 <td><b>Fecha de Creación</b></td>
-           
+                <td><b>Editar</b></td>
+                <td><b></b></td>
             </tr>
    
                 {% for i in object_list %}
@@ -29,7 +39,8 @@
                     <td>{{i.articulo}}</td>
                     <td>{{i.publica}}</td>
                     <td>{{i.creacion}}</td>
-                    
+                    <td><a href="{% url 'home:editarpublicacion' i.id %}">Editar</a></td>
+                    <td><a href="{% url 'home:detallepublicacion' i.id %}">Ver</a></td>
                 </tr>
                 {% endfor %}
    

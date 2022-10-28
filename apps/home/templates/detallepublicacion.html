@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contenido%}
+
+<header class="masthead bg-light text-white text-center">
+    <div class="container" >
+
+        <div class="card" style="width: 30rem;">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">
+                    Articulo: {{ object.articulo}}
+                    <br>
+                    <br>
+                    Descripcion: {{ object.articulo.descripcion }}
+                    <br>
+                    <br>
+                    Quien Publica: {{ object.publica }}
+                    <br>
+                    <br>
+                    Fecha Creación: {{ object.creacion }}
+                </h6>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
